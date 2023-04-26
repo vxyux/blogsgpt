@@ -9,8 +9,14 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'blog_tag','id');
     }
 }
