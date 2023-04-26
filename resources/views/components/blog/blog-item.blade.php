@@ -18,7 +18,7 @@
             {{ $blog->excerpt }}
         </p>
 
-        <a href="/" class="text-green-400 transition-all hover:text-green-600 pb-3">
+        <a href="{{ route('blog.show', $blog->id) }}" class="text-green-400 transition-all hover:text-green-600 pb-3">
             Read more <i class="fa-solid fa-arrow-right text-sm"></i>
         </a>
     </div>

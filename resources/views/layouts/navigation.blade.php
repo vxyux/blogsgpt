@@ -16,23 +16,23 @@
                         <x-nav-link :href="route('landing')" :active="request()->routeIs('landing')">
                             {{ __('Product') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('blog.index')" :active="request()->routeIs('careers')">
+                        <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
                             {{ __('Blogs') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('landing')" :active="request()->routeIs('pricing')">
+                        <x-nav-link :href="route('pricing')" :active="request()->routeIs('pricing')">
                             {{ __('Pricing') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('landing')" :active="request()->routeIs('careers')">
+                        <x-nav-link :href="route('careers')" :active="request()->routeIs('careers')">
                             {{ __('Careers') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('landing')" :active="request()->routeIs('about')">
-                            {{ __('About') }}
                         </x-nav-link>
                     @endguest
                     <!-- Logged in navigation -->
                     @user
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('myblog.index')" :active="request()->routeIs('myblog.index')">
+                            {{ __('My Blogs') }}
                         </x-nav-link>
                     @enduser
                 </div>

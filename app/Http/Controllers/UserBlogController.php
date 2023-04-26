@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Blog;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class BlogController extends Controller
+class UserBlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
-        $blogs = Blog::with('tags')->get();
+        $blogs = Blog::where('user_id', Auth::user()->id)->get();
 
-        return view('blogs.index')->with(compact('blogs'));
+        return view('userblogs.index')->with(compact('blogs'));
     }
 
     /**
@@ -39,9 +39,7 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        $blog = Blog::where('id', $id)->with('tags')->first();
-
-        return view('blogs.show')->with('blog', $blog);
+        //
     }
 
     /**

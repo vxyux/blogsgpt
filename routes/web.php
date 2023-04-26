@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('/pricing', function () {
+    return view('guest.pricing');
+})->name('pricing');
+
+Route::get('/careers', function () {
+    return view('guest.careers');
+})->name('careers');
+
+Route::get('/about', function () {
+    return view('guest.about');
+})->name('about');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/my-blogs', [UserBlogController::class, 'index'])->name('myblog.index');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
