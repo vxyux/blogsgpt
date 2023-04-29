@@ -18,8 +18,24 @@
             {{ $blog->excerpt }}
         </p>
 
-        <a href="{{ route('blog.show', $blog->id) }}" class="text-green-400 transition-all hover:text-green-600 pb-3">
-            Read more <i class="fa-solid fa-arrow-right text-sm"></i>
-        </a>
-    </div>
+        <div class="columns-2">
+            <div class="text-left">
+                <a href="{{ route('blog.show', $blog->id) }}" class="text-green-400 transition-all hover:text-green-600 pb-3">
+                    Read more <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+
+        @if(Route::currentRouteName() == 'myblog.index')
+            <div class="text-right">
+                <a href="{{ route('myblog.edit', $blog->id) }}" class="text-blue-300 transition-all hover:text-blue-600 pb-3 text-right">
+                    Edit
+                </a>
+                <a href="{{ route('myblog.destroy', $blog->id) }}" class="text-red-400 transition-all hover:text-red-600 pb-3 text-right">
+                    Delete <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        @endif
+</div>
+
+</div>
 </div>

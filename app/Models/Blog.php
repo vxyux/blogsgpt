@@ -11,6 +11,8 @@ class Blog extends Model
 
     protected $primaryKey = 'id';
 
+    protected $guarded = [];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

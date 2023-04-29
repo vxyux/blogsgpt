@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->integer('min_to_read');
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

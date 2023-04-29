@@ -11,5 +11,7 @@ class BlogTag extends Model
 
     protected $table = 'blog_tag';
 
+    protected $guarded = [];
+
     public $timestamps = false;
 }

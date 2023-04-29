@@ -25,5 +25,9 @@ class DatabaseSeeder extends Seeder
                 'tag_id' => Tag::all()->random()->id
             ]);
         }
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }

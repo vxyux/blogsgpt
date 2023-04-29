@@ -21,7 +21,8 @@ class BlogFactory extends Factory
             'user_id' => User::all()->random()->id,
             'title' => $this->faker->unique()->sentence(),
             'description' => $this->faker->text(),
-            'min_to_read' => $this->faker->NumberBetween(1, 10)
+            'min_to_read' => $this->faker->NumberBetween(1, 10),
+            'content' => $this->faker->text(),
         ];
     }
 }

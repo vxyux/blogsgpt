@@ -31,8 +31,14 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
+                            {{ __('Blogs') }}
+                        </x-nav-link>
                         <x-nav-link :href="route('myblog.index')" :active="request()->routeIs('myblog.index')">
                             {{ __('My Blogs') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('myblog.index')" :active="request()->routeIs('myblog.index')">
+                            {{ __('Saved Blogs') }}
                         </x-nav-link>
                     @enduser
                 </div>

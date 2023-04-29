@@ -15,11 +15,10 @@
             <p class="text-gray-500 sm:text-xl dark:text-gray-400">
                 {{ $blog->description }}
             </p>
+            <br>
+            <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                {{ $blog->content }}
+            </p>
         </div>
     </x-slot>
-
-    <div class="divide-y divide-gray-200 dark:divide-gray-700">
-
-    </div>
-
 </x-app-layout>
